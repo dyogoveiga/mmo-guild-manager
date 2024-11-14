@@ -11280,3 +11280,7 @@ body {
   position: absolute;
   background: rgb(7 7 7 / 94%);
 }
+.bg-thundercoins {
+  background-color: #323b45;
+  border-radius: 5px;
+}

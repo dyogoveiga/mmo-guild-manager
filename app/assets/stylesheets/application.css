@@ -11241,3 +11241,42 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
+
+/* 1. SIGN-IN PAGE */
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.background-thunder {
+  background: url(assets/images/thunderstorm.jpg) no-repeat 0 50%;
+    background-size: cover;
+    width: 100%;
+}
+.bg-thunder-grad {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgb(7 7 7 / 94%);
+}

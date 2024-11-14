@@ -29,7 +29,7 @@
 
       <div id="layoutSidenav">
         <%= render 'shared/sidenav' %>
-        <%= content_for?(:pages_layout) ? yield(:pages_layout) : yield %>
+        <%= yield %>
       </div>
 
 

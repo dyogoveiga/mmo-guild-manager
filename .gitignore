@@ -34,5 +34,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-startbootstrap-sb-admin-gh-pages
+startbootstrap-sb-admin-gh-pages/
 startbootstrap-sb-admin-gh-pages.zip

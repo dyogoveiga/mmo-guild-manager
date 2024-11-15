@@ -1,10 +1,46 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1>Auction</h1>
-            <p>Find me in app/views/auction/offer.html.erb</p>
+            <section class="section-items">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="header">
+                            <h2>Leilão #1 - Aberto</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories grid-->
+                <div class="row">
+                    <!-- Category-->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card border-0 mb-grid-gutter">
+                            <a class="card-img-tiles text-center" href="shop-style1-ls.html">
+                                <div class="main-img"><img src="https://gameslantern.com/storage/sites/throne-and-liberty/armor/P_Part_LE_M_PT_00007.png" alt="Clothing"></div>
+                            </a>
+                            <div class="card-body border mt-n1 py-4 text-center">
+                                <h2 class="h5 mb-1">Shadow Harverster Trousers</h2>
+                                <span class="d-block mb-3 font-size-xs text-muted">Finaliza em <span class="font-weight-semibold">4 horas</span></span>
+                                <a class="btn btn-pill btn-outline-primary btn-sm" href="shop-style1-ls.html">Fazer Oferta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Category-->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card border-0 mb-grid-gutter">
+                            <a class="card-img-tiles text-center" href="shop-style1-ls.html">
+                                <div class="main-img"><img src="https://gameslantern.com/storage/sites/throne-and-liberty/armor/P_Part_LE_M_HM_00005.png" alt="Clothing"></div>
+                            </a>
+                            <div class="card-body border mt-n1 py-4 text-center">
+                                <h2 class="h5 mb-1">Phantom Wolf Mask</h2>
+                                <span class="d-block mb-3 font-size-xs text-muted">Finaliza em <span class="font-weight-semibold">4 horas</span></span>
+                                <a class="btn btn-pill btn-outline-primary btn-sm" href="shop-style1-ls.html">Fazer Oferta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
+    <%= render 'shared/footer' %>
 </div>
-

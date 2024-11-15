@@ -14,7 +14,27 @@
     <script src="https://cdn.datatables.net/select/2.1.0/js/dataTables.select.js"></script>
     <script src="https://cdn.datatables.net/select/2.1.0/js/select.bootstrap5.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/plug-ins/2.1.8/sorting/datetime-moment.js" crossorigin="anonymous"></script>
     <script>new DataTable('#datatablesSimple', {
-        select: true
+
+    });</script>
+        <script>
+    $.fn.dataTable.moment( 'DD/MM/YYYY' );
+    new DataTable('#transactions', {
+            SearchPanes : true,
+            responsive: true,
+            columnDefs: [{
+                type: 'date',
+                targets: [2],
+                render: function (data, type, row) {
+                  if (type === 'sort') {
+                    return data.replace(/.*? /,'');
+                  }
+                  return data;
+                }
+              }
+            ],
+            order: [[ 2, 'asc' ]],
     });</script>
 </footer>

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   #get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   #get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  get "/users", to: "dashboards#index"
   get "/users/dashboard", to: "dashboards#index"
+  get "/users/wallet", to: "wallets#index"
+  get "/users/auction", to: "auctions#index"
+  get "/users/auction/offer", to: "auctions#offer"
   get "/signup", to: "signups#index"
 
   # Defines the root path route ("/")

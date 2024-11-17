@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/*
   #get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   #get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get "/users", to: "dashboards#index"
   get "/users/dashboard", to: "dashboards#index"
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   get "/users/auction", to: "auctions#index"
   get "/users/auction/offer", to: "auctions#offer"
   get "/signup", to: "signups#index"
+  match '/users/auth/:provider/callback', to: 'users/omniauth_callbacks#discord', via: [:get, :post]
+
 
   # Defines the root path route ("/")
   root to: "signins#index"

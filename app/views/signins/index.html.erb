@@ -1,6 +1,27 @@
-
 <main class="form-signin w-100 m-auto bg-body-tertiary">
-  <form class="text-center">
-    <button class="btn btn-primary w-100 py-2" type="submit"><i class="fa-brands fa-discord"></i> Entrar com Discord</button>
-  </form>
+    <form class="text-center">
+        <!-- <button class="btn btn-primary w-100 py-2" type="submit"><i class="fa-brands fa-discord"></i> Entrar com Discord</button> -->
+        <span class="fs-3"><i class="fa-brands fa-discord"></i></span><%= link_to "Login com Discord", user_discord_omniauth_authorize_path, method: :post, class: "btn btn-primary w-100 py-2 mt-2" %>
+    </form>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[data-method="post"]').forEach(function(element) {
+            element.addEventListener('click', function(event) {
+                event.preventDefault();
+                let form = document.createElement('form');
+                form.setAttribute('method', 'post');
+                form.setAttribute('action', element.getAttribute('href'));
+                form.setAttribute('style', 'display: none;');
+                let token = document.createElement('input');
+                token.setAttribute('type', 'hidden');
+                token.setAttribute('name', document.querySelector('meta[name="csrf-param"]').getAttribute('content'));
+                token.setAttribute('value', document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
+                form.appendChild(token);
+                document.body.appendChild(form);
+                form.submit();
+            });
+        });
+    });
+</script>

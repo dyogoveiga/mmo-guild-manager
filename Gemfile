@@ -19,6 +19,8 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
+gem "dotenv-rails", groups: [:development, :test]
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -55,3 +57,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"
+
+gem "omniauth", "~> 2.1"
+
+gem "omniauth-discord", "~> 1.2"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"

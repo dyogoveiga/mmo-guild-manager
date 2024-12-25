@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_24_162633) do
   create_table "dynamic_event_participations", force: :cascade do |t|
     t.integer "character_id", null: false
     t.string "discord_image_url"
-    t.string "status"
-    t.string "evetn_name"
+    t.string "status", default: "waiting_approval"
+    t.string "event_name"
     t.string "mode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -107,7 +107,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_24_162633) do
   create_table "weekly_event_participations", force: :cascade do |t|
     t.integer "character_id", null: false
     t.integer "weekly_event_id", null: false
-    t.string "status"
+    t.string "status", default: "waiting_approval"
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

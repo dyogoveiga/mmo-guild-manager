@@ -1,0 +1,43 @@
+character:
+  roles:
+    - dps
+    - tank
+    - healer
+  weapons:
+    - crossbow
+    - dagger
+    - greatsword
+    - longbow
+    - staff
+    - sword_and_shield
+    - wand
+    - spear
+  klasses:
+    - crossbow_dagger: scorpion
+    - crossbow_greatsword: outrider
+    - crossbow_longbow: scout
+    - crossbow_spear: cavalier
+    - crossbow_staff: battleweaver
+    - crossbow_sword_and_shield: raider
+    - crossbow_wand: fury
+    - dagger_greatsword: ravenger
+    - dagger_longbow: infiltrator
+    - dagger_spear: shadowdancer
+    - dagger_staff: spellblade
+    - dagger_sword_and_shield: berserker
+    - dagger_wand: darkblighter
+    - greasword_staff: sentinel
+    - greatsword_longbow: ranger
+    - greatsword_spear: gladiator
+    - greatsword_sword_and_shield: crusader
+    - greatsword_wand: paladin
+    - longbow_spear: impaler
+    - longbow_staff: liberator
+    - longbow_sword_and_shield: warden
+    - longbow_wand: seeker
+    - spear_staff: eradicator
+    - spear_sword_and_shield: steelheart
+    - spear_wand: voidlance
+    - staff_sword_and_shield: disciple
+    - staff_wand: invocator
+    - sword_and_shield_wand: templar

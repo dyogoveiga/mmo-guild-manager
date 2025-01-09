@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_24_162633) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_09_143556) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "gear_score"
@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_24_162633) do
     t.string "provider"
     t.string "uid"
     t.string "discord_username"
+    t.string "discord_image_url"
     t.index ["discord_username"], name: "index_users_on_discord_username", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true

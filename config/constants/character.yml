@@ -13,31 +13,87 @@ character:
     - wand
     - spear
   klasses:
-    - crossbow_dagger: scorpion
-    - crossbow_greatsword: outrider
-    - crossbow_longbow: scout
-    - crossbow_spear: cavalier
-    - crossbow_staff: battleweaver
-    - crossbow_sword_and_shield: raider
-    - crossbow_wand: fury
-    - dagger_greatsword: ravenger
-    - dagger_longbow: infiltrator
-    - dagger_spear: shadowdancer
-    - dagger_staff: spellblade
-    - dagger_sword_and_shield: berserker
-    - dagger_wand: darkblighter
-    - greasword_staff: sentinel
-    - greatsword_longbow: ranger
-    - greatsword_spear: gladiator
-    - greatsword_sword_and_shield: crusader
-    - greatsword_wand: paladin
-    - longbow_spear: impaler
-    - longbow_staff: liberator
-    - longbow_sword_and_shield: warden
-    - longbow_wand: seeker
-    - spear_staff: eradicator
-    - spear_sword_and_shield: steelheart
-    - spear_wand: voidlance
-    - staff_sword_and_shield: disciple
-    - staff_wand: invocator
-    - sword_and_shield_wand: templar
+    scorpion:
+      main_weapon: crossbow
+      offhand: dagger
+    outrider:
+      main_weapon: crossbow
+      offhand: greatsword
+    scout:
+      main_weapon: crossbow
+      offhand: longbow
+    cavalier:
+      main_weapon: crossbow
+      offhand: spear
+    battleweaver:
+      main_weapon: crossbow
+      offhand: staff
+    raider:
+      main_weapon: crossbow
+      offhand: sword_and_shield
+    fury:
+      main_weapon: crossbow
+      offhand: wand
+    ravenger:
+      main_weapon: dagger
+      offhand: greatsword
+    infiltrator:
+      main_weapon: dagger
+      offhand: longbow
+    shadowdancer:
+      main_weapon: dagger
+      offhand: spear
+    spellblade:
+      main_weapon: dagger
+      offhand: staff
+    berserker:
+      main_weapon: dagger
+      offhand: sword_and_shield
+    darkblighter:
+      main_weapon: dagger
+      offhand: wand
+    sentinel:
+      main_weapon: greatsword
+      offhand: staff
+    ranger:
+      main_weapon: greatsword
+      offhand: longbow
+    gladiator:
+      main_weapon: greatsword
+      offhand: spear
+    crusader:
+      main_weapon: greatsword
+      offhand: sword_and_shield
+    paladin:
+      main_weapon: greatsword
+      offhand: wand
+    impaler:
+      main_weapon: longbow
+      offhand: spear
+    liberator:
+      main_weapon: longbow
+      offhand: staff
+    warden:
+      main_weapon: longbow
+      offhand: sword_and_shield
+    seeker:
+      main_weapon: longbow
+      offhand: wand
+    eradicator:
+      main_weapon: spear
+      offhand: staff
+    steelheart:
+      main_weapon: spear
+      offhand: sword_and_shield
+    voidlance:
+      main_weapon: spear
+      offhand: wand
+    disciple:
+      main_weapon: staff
+      offhand: sword_and_shield
+    invocator:
+      main_weapon: staff
+      offhand: wand
+    templar:
+      main_weapon: sword_and_shield
+      offhand: wand

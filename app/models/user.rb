@@ -3,6 +3,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [ :discord ]
 
+  has_one :character, foreign_key: :discord_username, primary_key: :discord_username
+
+  before_create :set_role
+
   def self.from_omniauth(auth)
     user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
     user.email = auth.info.email
@@ -15,5 +19,15 @@ class User < ApplicationRecord
 
     user.save
     user
+  end
+
+  def admin?
+    role == "admin"
+  end
+
+  private
+
+  def set_role
+    self.role = "member"
   end
 end

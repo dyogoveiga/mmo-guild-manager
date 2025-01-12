@@ -1,0 +1,20 @@
+.row
+  .col-md-6.offset-md-3
+    h3 Create Character
+    = simple_form_for @character do |f|
+      .row
+        .col-md-6
+          = f.input :name
+        .col-md-6
+          = f.input :discord_username, input_html: { value: current_user.discord_username }, disabled: true
+      .row
+        .col-md-4
+          = f.input :role, collection: Klass::Role.list_names
+        .col-md-4
+          = f.input :main_weapon, collection: Klass::Weapon.list_names
+        .col-md-4
+          = f.input :off_hand, collection: Klass::Weapon.list_names
+      .row
+        .col-md-3
+          = f.submit "Create Character", class: "btn btn-primary"
+  

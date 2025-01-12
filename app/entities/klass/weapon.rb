@@ -10,6 +10,10 @@ class Klass
       self.instances
     end
 
+    def self.list_names
+      all.map(&:name)
+    end
+
     attr_reader :name
 
     def initialize(name: nil)

@@ -5,6 +5,12 @@ class Klass
     self.instances.detect { |instance| instance.name == name }
   end
 
+  def self.by_weapon_names(main_weapon: nil, offhand: nil)
+    self.instances.detect do |instance|
+      ([ main_weapon, offhand ] - [ instance.main_weapon.name, instance.offhand.name ]).empty?
+    end
+  end
+
   def self.all
     self.instances
   end

@@ -1,0 +1,21 @@
+h3 Members
+table.table.table-striped.table-bordered.text-center
+  thead 
+    tr
+      th Nick
+      th Class
+      th Role
+      th Main Weapon
+      th Off Hand
+      th Gear Score
+      th Member Since
+  tbody
+    - @characters.each do |character|
+      tr
+        td = character.name
+        td = character.klass.capitalize
+        td = character.role.upcase
+        td = character.main_weapon.capitalize
+        td = character.off_hand.capitalize
+        td = character.gear_score
+        td = character.member_since

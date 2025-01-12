@@ -1,5 +1,5 @@
 class Admin::DashboardsController < Admin::BaseController
   def show
-    @characters = Character.all
+    @characters = Character.all.order(:name)
   end
 end

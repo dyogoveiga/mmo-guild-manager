@@ -1,0 +1,11 @@
+en:
+  character:
+    weapon:
+      crossbow: Crossbow
+      dagger: Dagger
+      greatsword: Greatsword
+      longbow: Longbow
+      staff: Staff
+      sword_and_shield: Sword / Shield
+      wand: Wand
+      spear: Spear

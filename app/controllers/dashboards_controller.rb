@@ -1,5 +1,5 @@
 class DashboardsController < BaseController
   def show
-    @characters = Character.all
+    @characters = Character.all.order(:name)
   end
 end

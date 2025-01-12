@@ -10,4 +10,8 @@ module ApplicationHelper
 
     "#{current_user.character.name} (#{current_user.discord_username})"
   end
+
+  def translate_character_weapon_name(weapon_name)
+    I18n.t("character.weapon.#{weapon_name}")
+  end
 end

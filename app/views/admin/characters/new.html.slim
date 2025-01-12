@@ -1,23 +1,30 @@
-.row
-  .col-md-6.offset-md-3
-    h3 Create Character
-    = simple_form_for @character, url: admin_characters_path do |f|
-      .row
-        .col-md-6
-          = f.input :name
-        .col-md-6
-          = f.input :discord_username
-      .row
-        .col-md-4
-          = f.input :role, collection: Klass::Role.list_names
-        .col-md-4
-          = f.input :main_weapon, collection: Klass::Weapon.list_names
-        .col-md-4
-          = f.input :off_hand, collection: Klass::Weapon.list_names
-      .row
-        .col-md-12
-          = f.input :member_since
-      .row
-        .col-md-3
-          = f.submit "Create Character", class: "btn btn-primary"
-  
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Create Character
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              = link_to "Dashboard", dashboard_path
+            li.breadcrumb-item.active Create Character
+        .card-body
+          = simple_form_for @character, url: admin_characters_path do |f|
+            .row
+              .col-md-6
+                = f.input :name
+              .col-md-6
+                = f.input :discord_username
+            .row
+              .col-md-4
+                = f.input :role, collection: Klass::Role.list_names
+              .col-md-4
+                = f.input :main_weapon, collection: Klass::Weapon.list_names
+              .col-md-4
+                = f.input :off_hand, collection: Klass::Weapon.list_names
+            .row
+              .col-md-12
+                = f.input :member_since
+            .row
+              .col-md-12.float-right
+                = f.submit "Create Character", class: "btn btn-primary float-end"    

@@ -1,24 +1,33 @@
-h3 Members
-= link_to "New Character", new_admin_character_path, class: "btn btn-primary"
-table.table.table-striped.table-bordered.text-center
-  thead 
-    tr
-      th Nick
-      th Class
-      th Role
-      th Main Weapon
-      th Off Hand
-      th Gear Score
-      th Member Since
-      th Actions
-  tbody
-    - @characters.each do |character|
-      tr
-        td = character.name
-        td = character.klass.capitalize
-        td = character.role.upcase
-        td = character.main_weapon.capitalize
-        td = character.off_hand.capitalize
-        td = character.gear_score
-        td = character.member_since
-        td = link_to "Edit", edit_admin_character_path(character)
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Dashboard
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item Admin
+            li.breadcrumb-item.active Dashboard 
+          .row
+            .col-md-12
+              = link_to "New Character", new_admin_character_path, class: "btn btn-primary float-end"
+        .card-body
+          table.table.table-striped.table-bordered.text-center
+            thead 
+              tr
+                th Nick
+                th Class
+                th Role
+                th Main Weapon
+                th Off Hand
+                th Gear Score
+                th Member Since
+            tbody
+              - @characters.each do |character|
+                tr
+                  td = character.name
+                  td = character.klass.capitalize
+                  td = character.role.upcase
+                  td = translate_character_weapon_name(character.main_weapon)
+                  td = translate_character_weapon_name(character.off_hand)
+                  td = character.gear_score
+                  td = character.member_since

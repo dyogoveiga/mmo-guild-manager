@@ -11499,3 +11499,14 @@ body {
   background-color: #444444;
   transform: translateY(-50%);
 }
+
+.center-content {
+  margin-left: 225px !important;
+  margin-top: 56px !important;
+  padding: 20px !important;
+  width: calc(100% - 225px) !important;
+}
+
+#saldo {
+  padding: 2px 15px !important;
+}

@@ -5,10 +5,9 @@ Rails.application.routes.draw do
 
 
   # get "/users", to: "dashboards#index"
-  # get "/users/auction", to: "auctions#index"
-  # get "/users/wallet", to: "wallets#index"
-  # get "/users/auction/offer", to: "auctions#offer"
-  # get "/signup", to: "signups#index"
+  get "/users/auction", to: "auctions#index"
+  get "/users/wallet", to: "wallets#index"
+  get "/users/auction/offer", to: "auctions#offer"
 
   get "/dashboard", to: "dashboards#show"
   get "/users/auth/:provider/callback", to: "users/omniauth_callbacks#discord"

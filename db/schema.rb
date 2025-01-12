@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
     t.string "main_weapon"
     t.string "off_hand"
     t.string "klass"
-    t.date "member_since"
+    t.datetime "member_since"
     t.string "invited_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
 
   create_table "gear_score_histories", force: :cascade do |t|
     t.integer "value"
-    t.date "reference_at"
+    t.datetime "reference_at"
     t.integer "character_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
   create_table "recurrent_events", force: :cascade do |t|
     t.string "name"
     t.integer "hour"
-    t.string "week_day"
+    t.integer "week_day"
     t.string "type"
     t.integer "bonification_value"
     t.string "bonification_type"
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
 
   create_table "reputation_histories", force: :cascade do |t|
     t.integer "value"
-    t.date "reference_at"
+    t.datetime "reference_at"
     t.integer "character_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -119,9 +119,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
 
   create_table "weekly_events", force: :cascade do |t|
     t.string "name"
-    t.date "scheduled_at"
+    t.datetime "scheduled_at"
     t.integer "hour"
-    t.string "week_day"
+    t.integer "week_day"
     t.string "type"
     t.integer "bonification_value"
     t.string "bonification_type"
@@ -133,8 +133,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
   end
 
   create_table "weekly_schedules", force: :cascade do |t|
-    t.date "start_at"
-    t.date "end_at"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

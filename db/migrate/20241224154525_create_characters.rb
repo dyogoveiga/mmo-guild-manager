@@ -8,7 +8,7 @@ class CreateCharacters < ActiveRecord::Migration[7.2]
       t.string :main_weapon
       t.string :off_hand
       t.string :klass
-      t.date :member_since
+      t.datetime :member_since
       t.string :invited_by
 
       t.timestamps

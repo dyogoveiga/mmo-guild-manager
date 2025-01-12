@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   root to: "signins#new"
 
   namespace :admin do
-    resources :characters
+    resources :characters do
+      resources :gear_score_histories, module: :characters
+      resources :reputation_histories, module: :characters
+    end
 
     get "/", to: "dashboards#show"
   end

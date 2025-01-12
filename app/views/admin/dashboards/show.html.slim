@@ -22,6 +22,7 @@
                 th Gear Score
                 th Member Since
                 th Invited By
+                th Actions
             tbody
               - @characters.each do |character|
                 tr
@@ -33,3 +34,7 @@
                   td = character.gear_score
                   td = character.member_since
                   td = character.invited_by
+                  td 
+                    = link_to "GS", admin_character_gear_score_histories_path(character)
+                    | &nbsp;
+                    = link_to "REP", admin_character_reputation_histories_path(character)

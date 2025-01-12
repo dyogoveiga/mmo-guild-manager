@@ -1,0 +1,28 @@
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Add Reputation
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              = link_to "Dashboard", admin_path
+            li.breadcrumb-item.active
+              = @character.name 
+            li.breadcrumb-item.active
+              = "Gear Score History" 
+        .card-body
+          = simple_form_for @reputation_history, url: admin_character_reputation_histories_path do |f|
+            .row
+              .col-md-4
+                  label.form-label Character Name
+                  input.form-control name="reputation_history[value]" disabled="disabled" value="#{@character.name}" 
+                 
+              .col-md-4
+                = f.input :value, label: "Reputation"
+            .row
+              .col-md-12
+                = f.input :reference_at
+            .row
+              .col-md-12.float-right
+                = f.submit "Update Gear Score", class: "btn btn-primary float-end"

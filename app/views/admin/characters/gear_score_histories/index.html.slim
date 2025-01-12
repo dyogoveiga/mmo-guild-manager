@@ -1,0 +1,29 @@
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Gear Score History (#{@character.name})
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              = link_to "Dashboard", admin_path
+            li.breadcrumb-item.active
+              = @character.name 
+            li.breadcrumb-item.active
+              = "Gear Score History" 
+          .row
+            .col-md-12
+              = link_to "Update Gear Score", new_admin_character_gear_score_history_path(@character), class: "btn btn-primary float-end"
+        .card-body
+          table.table.table-striped.table-bordered.text-center
+            thead 
+              tr
+                th Reference At
+                th Value
+                th Actions
+            tbody
+              - @gear_score_histories.each do |gear_score_history|
+                tr
+                  td = gear_score_history.reference_at
+                  td = gear_score_history.value
+                  td

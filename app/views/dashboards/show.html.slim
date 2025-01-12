@@ -18,6 +18,7 @@
                 th Off Hand
                 th Gear Score
                 th Member Since
+                th Invited By
             tbody
               - @characters.each do |character|
                 tr
@@ -28,3 +29,4 @@
                   td = character.off_hand.capitalize
                   td = character.gear_score
                   td = character.member_since
+                  td = character.invited_by

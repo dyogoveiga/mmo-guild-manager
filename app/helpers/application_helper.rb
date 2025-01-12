@@ -14,4 +14,14 @@ module ApplicationHelper
   def translate_character_weapon_name(weapon_name)
     I18n.t("character.weapon.#{weapon_name}")
   end
+
+  def current_character
+    @current_character ||= current_user.character
+  end
+
+  def current_thundercoins_amount
+    return 0 unless current_character
+
+    current_character.wallet.balance
+  end
 end

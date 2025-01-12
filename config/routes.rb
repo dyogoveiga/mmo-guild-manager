@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboards#show"
   get "/users/auth/:provider/callback", to: "users/omniauth_callbacks#discord"
 
-  root to: "signins#show"
+  root to: "signins#new"
 
   namespace :admin do
     resources :characters

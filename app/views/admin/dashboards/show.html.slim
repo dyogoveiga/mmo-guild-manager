@@ -21,6 +21,7 @@
                 th Off Hand
                 th Gear Score
                 th Member Since
+                th Invited By
             tbody
               - @characters.each do |character|
                 tr
@@ -31,3 +32,4 @@
                   td = translate_character_weapon_name(character.off_hand)
                   td = character.gear_score
                   td = character.member_since
+                  td = character.invited_by

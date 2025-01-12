@@ -2,6 +2,7 @@ class Character < ActiveRecord::Base
   DEFAULT_GEAR_SCORE = 0
 
   belongs_to :user, optional: true, foreign_key: :discord_username, primary_key: :discord_username
+  has_one :wallet, dependent: :destroy
 
   validates :name, :discord_username, :role, :main_weapon, :off_hand, :member_since, presence: true
   validates :discord_username, uniqueness: true
@@ -16,6 +17,10 @@ class Character < ActiveRecord::Base
 
   before_save(
     :assign_klass_name
+  )
+
+  after_create(
+    :create_wallet!
   )
 
   private
@@ -36,5 +41,9 @@ class Character < ActiveRecord::Base
 
   def assign_klass_name
     self.klass = Klass.by_weapon_names(main_weapon: main_weapon, offhand: off_hand).name
+  end
+
+  def create_wallet!
+    Wallet.create(character: self)
   end
 end

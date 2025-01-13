@@ -1,0 +1,37 @@
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Weekly Character Report Info 
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              | Admin
+            li.breadcrumb-item
+              = link_to "Dashboard", admin_path
+            li.breadcrumb-item.active
+              = "Weekly Character Report Info" 
+        .card-body
+          = simple_form_for @report, url: admin_weekly_character_info_reports_path do |f|
+            = f.simple_fields_for :weekly_character_info_report_items do |related_form|
+              = related_form.hidden_field :character_id, value: related_form.object.character_id
+              
+              .card
+                .card-header = related_form.object.character.name
+                .card-body
+                  .row
+                    .col-md-2
+                      = related_form.input :reputation
+                    .col-md-2
+                      = related_form.input :gear_score
+                    .col-md-2
+                      = related_form.input :kill_ranking
+                    .col-md-2
+                      = related_form.input :activity_ranking
+                    .col-md-2
+                      = related_form.input :kills
+                    .col-md-2
+                      = related_form.input :assists
+            .row
+              .col-md-12.float-right
+                = f.submit "Save Report", class: "btn btn-primary float-end"

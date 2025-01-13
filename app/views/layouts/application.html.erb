@@ -17,16 +17,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bootstrap5.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body class="sb-nav-fixed">
-      <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' %>
 
-      <div id="layoutSidenav" class="dashboard">
-        <%= render 'shared/sidenav' %>
-        <div class="container center-content">
-          <%= yield %>
-        </div>
+    <div id="layoutSidenav" class="dashboard">
+      <%= render 'shared/sidenav' %>
+      <div class="container center-content">
+        <%= yield %>
       </div>
+    </div>
+
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </body>
 </html>

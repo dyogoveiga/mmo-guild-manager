@@ -1,0 +1,2 @@
+class WeeklyCharacterInfoReport < ApplicationRecord
+end

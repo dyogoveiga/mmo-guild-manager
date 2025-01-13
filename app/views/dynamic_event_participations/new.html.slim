@@ -1,0 +1,23 @@
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Dynamic Event
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              = link_to "Dashboard", dashboard_path
+            li.breadcrumb-item.active Dynamic Event
+        .card-body
+          = simple_form_for @dynamic_event_participation do |f|
+            .row
+              .col-md-6
+                = f.input :event_name, collection: DynamicEventParticipation::EVENT_NAMES
+              .col-md-6
+                = f.input :mode, collection: DynamicEventParticipation::MODES
+            .row
+              .col-md-12
+                = f.input :discord_image_url
+            .row
+              .col-md-12.float-right
+                = f.submit "Register participation", class: "btn btn-primary float-end"

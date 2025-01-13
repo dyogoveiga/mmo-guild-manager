@@ -1,0 +1,50 @@
+.container-fluid.px-4
+  .row
+    .col-md-12
+      .card
+        .card-header
+          h1.mt-4 Dynamic Events (#{current_character.name})
+          ol.breadcrumb.mb-4
+            li.breadcrumb-item
+              = link_to "Dashboard", dashboard_path
+            li.breadcrumb-item.active Dynamic Events
+          = link_to "Add new event", new_dynamic_event_participation_path, class: "btn btn-primary action-new-button"
+        .card-body
+          .row
+            - @dynamic_event_participations.each do |dynamic_event_participation|
+              .col-md-6
+                .card
+                  .card-header
+                    h4.mt-4
+                      = dynamic_event_participation.event_name 
+                      | &nbsp;
+                      = "(#{dynamic_event_participation.mode})"
+                    p = dynamic_event_participation.created_at
+                    button.btn.btn-primary.image-modal-show[
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#dynamic-event-print-modal"
+                      data-title="#{dynamic_event_participation.event_name}"
+                      data-image-url="#{dynamic_event_participation.discord_image_url}"
+                    ]
+                      i.fa.fa-magnifying-glass
+                  .card-body
+                    = image_tag dynamic_event_participation.discord_image_url, class: "img-fluid"
+
+#dynamic-event-print-modal.modal.fade
+   .modal-dialog
+    .modal-content
+      .modal-header
+        h5#staticBackdropLabel.modal-title
+        button.btn-close.btn-close-white[type="button" data-bs-dismiss="modal" aria-label="Close"]
+      .modal-body
+        img scr="" id="dynamic-event-image" class="img-fluid"
+
+javascript: 
+  $(document).on("click", ".image-modal-show", function() {
+    var title = $(this).data('title');
+    var imageUrl = $(this).data('image-url');
+
+    $('#staticBackdropLabel').text(title);
+    $('#dynamic-event-image').attr('src', imageUrl);
+  });

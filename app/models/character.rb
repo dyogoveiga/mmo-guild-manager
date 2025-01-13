@@ -5,6 +5,7 @@ class Character < ActiveRecord::Base
   has_one :wallet, dependent: :destroy
   has_many :gear_score_histories, dependent: :destroy
   has_many :reputation_histories, dependent: :destroy
+  has_many :dynamic_event_participations, dependent: :destroy
 
   validates :name, :discord_username, :role, :main_weapon, :off_hand, :member_since, presence: true
   validates :discord_username, uniqueness: true

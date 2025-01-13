@@ -1,0 +1,52 @@
+#layoutSidenav
+  #layoutSidenav_nav
+    #sidenavAccordion.sb-sidenav.accordion.sb-sidenav-dark
+      .sb-sidenav-menu
+        .nav
+          .sb-sidenav-menu-heading
+            | Main Menu
+          
+          = link_to root_path, class: "nav-link"
+            .sb-nav-link-icon
+              i.fa-solid.fa-house
+            |  Home
+          a.nav-link.collapsed[href="#" data-bs-toggle="collapse" data-bs-target="#carteiraCollapse"]
+            .sb-nav-link-icon
+              i.fa-solid.fa-wallet
+            |  Wallet (Soon) 
+          a.nav-link.collapsed[href="#" data-bs-toggle="collapse" data-bs-target="#leilaoCollapse"]
+            .sb-nav-link-icon
+              i.fa.fa-gavel
+            |  Auction (Soon)
+          a.nav-link.collapsed[href="#" data-bs-toggle="collapse" data-bs-target="#dynamic-events"]
+            .sb-nav-link-icon
+              i.fa-solid.fa-calendar-days
+            |  Dynamic Events 
+            .sb-sidenav-collapse-arrow
+              i.fas.fa-angle-down
+          #dynamic-events.collapse
+            nav.sb-sidenav-menu-nested.nav
+              = link_to new_dynamic_event_participation_path, class: "nav-link" do
+                i.fa-solid.fa-images 
+                | &nbsp; Add new event
+
+              = link_to dynamic_event_participations_path, class: "nav-link" do
+                i.fa-solid.fa-table-list
+                | &nbsp; My events
+                    
+          - if current_user.admin?
+            a.nav-link.collapsed[href="#" data-bs-toggle="collapse" data-bs-target="#admin"]
+              .sb-nav-link-icon
+                i.fa.fa-hammer
+              |  Admin
+              .sb-sidenav-collapse-arrow
+                i.fas.fa-angle-down
+            #admin.collapse
+              nav.sb-sidenav-menu-nested.nav
+                = link_to admin_path, class: "nav-link" do
+                  i.fa-solid.fa-table-columns 
+                  | &nbsp; Dashboard 
+                = link_to new_admin_character_path, class: "nav-link" do
+                  i.fa-solid.fa-user-plus 
+                  | &nbsp; New Character
+

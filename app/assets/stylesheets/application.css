@@ -11510,3 +11510,32 @@ body {
 #saldo {
   padding: 2px 15px !important;
 }
+
+.image-modal-show, .action-new-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+#dynamic-event-print-modal img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: 85% !important;
+}
+
+#dynamic-event-print-modal .modal-dialog {
+  width: 100% !important;
+  max-width: 90% !important;
+  text-align: center;
+}
+
+#dynamic-event-print-modal .modal-header {
+  background: #212529;
+  border-bottom: none;
+  color: #fff;
+}
+
+#dynamic-event-print-modal .modal-body {
+  background-color: #111111;
+}
+

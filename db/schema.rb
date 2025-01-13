@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_13_004320) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "gear_score"
@@ -106,6 +106,27 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
     t.index ["character_id"], name: "index_wallets_on_character_id"
   end
 
+  create_table "weekly_character_info_report_items", force: :cascade do |t|
+    t.integer "weekly_character_info_report_id", null: false
+    t.integer "character_id", null: false
+    t.integer "gear_score"
+    t.integer "reputation"
+    t.integer "kill_ranking"
+    t.string "activity_ranking"
+    t.integer "kills"
+    t.integer "assists"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_weekly_character_info_report_items_on_character_id"
+    t.index ["weekly_character_info_report_id"], name: "idx_on_weekly_character_info_report_id_11464cc2de"
+  end
+
+  create_table "weekly_character_info_reports", force: :cascade do |t|
+    t.datetime "reference_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "weekly_event_participations", force: :cascade do |t|
     t.integer "character_id", null: false
     t.integer "weekly_event_id", null: false
@@ -144,6 +165,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_12_122632) do
   add_foreign_key "reputation_histories", "characters"
   add_foreign_key "wallet_transactions", "wallets"
   add_foreign_key "wallets", "characters"
+  add_foreign_key "weekly_character_info_report_items", "characters"
+  add_foreign_key "weekly_character_info_report_items", "weekly_character_info_reports"
   add_foreign_key "weekly_event_participations", "characters"
   add_foreign_key "weekly_event_participations", "weekly_events"
   add_foreign_key "weekly_events", "weekly_schedules"

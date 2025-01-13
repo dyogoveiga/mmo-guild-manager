@@ -14,11 +14,15 @@ Rails.application.routes.draw do
 
   root to: "signins#new"
 
+  resources :dynamic_event_participations, only: [ :index, :new, :create ]
+
   namespace :admin do
     resources :characters do
       resources :gear_score_histories, module: :characters
       resources :reputation_histories, module: :characters
     end
+
+    resources :weekly_character_info_reports
 
     get "/", to: "dashboards#show"
   end

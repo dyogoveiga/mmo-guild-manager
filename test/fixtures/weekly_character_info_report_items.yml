@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weekly_character_info_report: one
+  character: one
+  gear_score: 1
+  reputation: 1
+  kill_ranking: 1
+  activity_ranking: MyString
+  kills: 1
+  assists: 1
+
+two:
+  weekly_character_info_report: two
+  character: two
+  gear_score: 1
+  reputation: 1
+  kill_ranking: 1
+  activity_ranking: MyString
+  kills: 1
+  assists: 1

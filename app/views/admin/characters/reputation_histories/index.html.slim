@@ -6,6 +6,8 @@
           h1.mt-4 Reputation History (#{@character.name})
           ol.breadcrumb.mb-4
             li.breadcrumb-item
+              | Admin
+            li.breadcrumb-item
               = link_to "Dashboard", admin_path
             li.breadcrumb-item.active
               = @character.name 
@@ -13,7 +15,7 @@
               = "Reputation History" 
           .row
             .col-md-12
-              = link_to "Add Reputation", new_admin_character_reputation_history_path(@character), class: "btn btn-primary float-end"
+              = link_to "Add Reputation", new_admin_character_reputation_history_path(@character), class: "btn btn-primary action-new-button"
         .card-body
           table.table.table-striped.table-bordered.text-center
             thead 

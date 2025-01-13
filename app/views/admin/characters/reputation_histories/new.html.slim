@@ -6,6 +6,8 @@
           h1.mt-4 Add Reputation
           ol.breadcrumb.mb-4
             li.breadcrumb-item
+              | Admin
+            li.breadcrumb-item
               = link_to "Dashboard", admin_path
             li.breadcrumb-item.active
               = @character.name 
@@ -25,4 +27,4 @@
                 = f.input :reference_at
             .row
               .col-md-12.float-right
-                = f.submit "Update Gear Score", class: "btn btn-primary float-end"
+                = f.submit "Update Reputation", class: "btn btn-primary float-end"

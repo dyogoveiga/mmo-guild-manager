@@ -13,7 +13,7 @@ class DynamicEventParticipationsController < BaseController
     if @dynamic_event_participation.save
       redirect_to dynamic_event_participations_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

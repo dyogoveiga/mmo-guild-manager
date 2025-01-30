@@ -1,5 +1,5 @@
 class SignupsController < ApplicationController
-  layout 'page'
+  layout "page"
 
   def index
   end

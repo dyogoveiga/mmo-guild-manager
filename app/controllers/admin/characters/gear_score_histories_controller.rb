@@ -17,7 +17,7 @@ class Admin::Characters::GearScoreHistoriesController < Admin::BaseController
     if @gear_score_history.save
       redirect_to admin_character_gear_score_histories_path(@character)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

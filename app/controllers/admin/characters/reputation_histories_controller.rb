@@ -17,7 +17,7 @@ class Admin::Characters::ReputationHistoriesController < Admin::BaseController
     if @reputation_history.save
       redirect_to admin_character_reputation_histories_path(@character)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

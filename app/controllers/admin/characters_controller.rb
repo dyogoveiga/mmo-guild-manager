@@ -9,7 +9,7 @@ class Admin::CharactersController < Admin::BaseController
     if @character.save
       redirect_to admin_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

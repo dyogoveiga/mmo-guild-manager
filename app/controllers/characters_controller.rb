@@ -13,7 +13,7 @@ class CharactersController < BaseController
     if @character.save
       redirect_to dashboard_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
